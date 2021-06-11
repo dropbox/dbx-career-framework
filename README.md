@@ -18,5 +18,9 @@
 
 ## Content Management
 * This repo uses ["Just the Docs"](https://pmarsceill.github.io/just-the-docs/). View the quick [start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special plugins and can run on GitHub Pages’ standard Jekyll compiler.
-* Paper docs exported as Markdown are stored in "collections". Look under _config.yml for collection names this repo uses.
+* Steps to add content to this repo
+** export paper docs as Markdown
+** add the document to specific directory under `docs` 
+** Run `bundle exec jekyll serve` locally to verify the changes
+** push changes to the repo
 * To customize content or navigation, see the [docs here](https://pmarsceill.github.io/just-the-docs/docs/configuration/#document-collections)
