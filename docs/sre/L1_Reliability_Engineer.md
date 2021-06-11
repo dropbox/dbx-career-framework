@@ -1,6 +1,9 @@
+---
+layout: default
+title: L1 Reliability Engineer
+parent: Site Reliability Engineer (SRE)
+---
 # L1 Reliability Engineer
-
-    layout note
 
 ***I*** ***take direction from my team to automate and understand the systems***
 **

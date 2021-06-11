@@ -1,16 +1,41 @@
+---
+layout: default
+title: L1 Quality Assurance Engineer
+parent: Quality Assurance Engineer (QAE)
+---
 # L1 Quality Assurance Engineer
 
-    layout note
-
 ***I plan and execute testing of features and report on quality risks to cross-functional stakeholders***
-**
-    layout end
-| **Scope**<br>*Area of ownership and level of autonomy / ambiguity*                      | **Collaborative** **Reach**<br>*Organizational reach and extent of influence*  | **Impact Levers**<br>*Technical levers typically exercised to achieve business impact* |
+
+## Table examples
+
+| Scope   | Collaborative Reach | Impact Levers |
+|:--------|:-------------------:|--------:|
+| I execute on defined tasks and contribute to problems with defined solutions.  | I work within the scope of my team with specific guidance from my manager/TL | Craft - I primarily focus on improving my craft as an engineer |
+
+
+| Column 1      | Column 2   | Column 3  
+|---------------|:-----------|:---------:|
+| First Row     | Some value | 1. yoyo   |
+|               |            | 2. baz    |
+|               |            | 3. bar    |
+|---------------|------------|-----------|
+| Second row    |  I'm cool  | Totally   |
+|---------------|------------|-----------|
+| Third  row    | andmore    | sweet     |
+
+
+| **Responsibility**  | **Key Behaviors**   |
+|---------------------|:--------------------|
+| **Impact**          | • I work with my manager to prioritize tasks that add the most value and deliver high-quality results for my customer | 
+|                     | •  I understand and effectively participate in the core processes of my team (planning, on-call rotations, bug triage, metrics review, etc) |
+
+| **Scope**<br> *Area of ownership and level of autonomy / ambiguity*                      | **Collaborative** **Reach**<br>*Organizational reach and extent of influence*  | **Impact Levers**<br>*Technical levers typically exercised to achieve business impact* |
 | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| - I execute on defined tasks and contribute to solving problems with defined solutions. | - I work within the scope of my team with specific guidance from my manager/TL | - Craft - I primarily focus on improving my craft as an engineer                       |
+| * I execute on defined tasks and contribute to solving problems with defined solutions. | * I work within the scope of my team with specific guidance from my manager/TL | - Craft - I primarily focus on improving my craft as an engineer                       |
 
 ## 🏆 Results
-| **Responsibility**  | **Key** **B****ehaviors**                                                                                                                                                                                                                                           |
+| **Responsibility**  | **Key Behaviors**                                                                                                                                                                                                                                           |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Impact**          | - I work with my manager to prioritize tasks that add the most value and deliver high-quality results for my customer<br>- I understand and effectively participate in the core processes of my team (planning, on-call rotations, bug triage, metrics review, etc) |
 | **Ownership**       | - I follow through on my commitments, take responsibility for my work, and deliver my work on time<br>- I ask questions to clarify expectations <br>- I own my failures and learn from them                                                                         |

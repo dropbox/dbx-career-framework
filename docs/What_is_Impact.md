@@ -1,3 +1,8 @@
+---
+layout: default
+title: What is Impact?
+nav_order: 99
+---
 # What is Impact?
 Dropbox measures the success of its engineers largely on business impact. But what does impact mean? The definition is by necessity a bit vague. However, it can best be summed up by our core value, *They Win, We Win*.
 
@@ -30,7 +35,3 @@ You excel at delivering very large, deep or cross-functional projects through yo
 
 **Technical Leadership & Mentorship**
 You are a role model for what excellence in software engineering looks like, and you actively level up those around you through the practice of your craft, guidance, and example-setting. Impact comes through how you influence how your teams, and Dropbox as a whole, goes about building and operating software, and your ability to accelerate the technical development of those around you.
-
-
-    tags: #eng-career
-
