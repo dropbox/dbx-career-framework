@@ -60,49 +60,7 @@
   });
 </script>
 
-<script type="text/javascript">
-  enable_safeWindowOpen();
-</script>
-<script type="text/javascript">
-
-  // $(document).ready(function() {
-  //   var hash = window.location.hash
-  //   if (hash) {
-  //     console.log(hash, hash.split(":").shift())
-  //   }
-  // });
-
-    
-        $('.framelink').click(loadLocalLink)
-    
 
 
-    var lastState = "";
-    var lastScrolled = false;
-    $(document).bind('scroll',function(e){
-      var scrolled = window.pageYOffset > 32
-      if (scrolled != lastScrolled) {
-          $('body').toggleClass("scrolled", scrolled)
-          lastScrolled = scrolled
-      }
-
-      var hash = undefined
-      $($("#doc h1").get().reverse()).each(function(){
-          if ($(this).offset().top < window.pageYOffset + 200) {
-            hash = $(this).attr('id');
-            return false;
-          }
-          return true;
-      });
-
-      if (lastState != hash) {
-        lastState = hash
-        var state = hash ? "#" + hash : window.location.pathname
-        history.replaceState(null, document.title, state)
-        $("#doc-nav a").removeClass("selected")
-        $("#doc-nav-" + hash).addClass("selected")
-      }
-    });
-</script>
 
 
