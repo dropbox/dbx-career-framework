@@ -1,0 +1,496 @@
+
+<link href="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/images/binder-32.png" rel="icon" type="image/png"/>
+<script src="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/javascripts/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/javascripts/binder.js" type="text/javascript"></script>
+<link href="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/featherlight/featherlight.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/featherlight/featherlight.min.js" type="text/javascript"></script>
+<link href="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/featherlight/featherlight.gallery.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/featherlight/featherlight.gallery.min.js" type="text/javascript"></script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/stylesheets/binder.css" rel="stylesheet" type="text/css"/>
+
+<link href="https://dropbox-appbox-static.s3.amazonaws.com/static/binder/stylesheets/font-sharp-grotesk.css" rel="stylesheet" type="text/css"/>
+<link href="data:text/css;charset=utf-8;base64,Ym9keSB7CiAgLS1kb2MtdGl0bGUtZm9udC1zaXplOiAzNnB4OwogIC0tZG9jLXRpdGxlLWZvbnQ6ICJTaGFycCBHcm90ZXNrIERCIExpZ2h0IDIwIiwgc2Fucy1zZXJpZjsKICAtLW5hdi10aXRsZS1mb250LXNpemU6IDIwcHg7CiAgLS1uYXYtdGl0bGUtZm9udDogIlNoYXJwIEdyb3Rlc2sgREIgTGlnaHQgMjAiLCBzYW5zLXNlcmlmOwogIC0tbmF2LXdpZHRoOiAzMjVweDsKICAtLW5hdi1iYWNrZ3JvdW5kLWNvbG9yOiAjMTUxNTE1OwogIC0tbmF2LXRpdGxlLWNvbG9yOiAjQ0ZCNEZGOwogIC0tbmF2LXRleHQtY29sb3I6ICNGRkZGRkY7CiAgLS1uYXYtc2VsZWN0aW9uLWNvbG9yOiAjNTM2MTcwOwogIC0tbmF2LWhvdmVyLWNvbG9yOiAjRTZFOEVCOwogIC0tbmF2LWxvZ28tZGlzcGxheTogYmxvY2s7CiAgLS1uYXYtdHJpYW5nbGVzLWRpc3BsYXk6IGJsb2NrOwogIC0tZWRpdC1saW5rczogaGlkZGVuOwp9CiAKLyogVGhlIGZvbGxvd2luZyBzZWN0aW9uIGlzIENTUyBoYWNrZXJ5IHRvIG1ha2UgdGhlIGJpbmRlciBsb29rIHJpZ2h0ICovCiAKLyogVXBkYXRlIHRoZSBUT0MgdGl0bGUgZm9udCBzaXplIGFuZCBmYW1pbHkuIFRoZSAtLW5hdi10aXRsZS1mb250IHZhcmlhYmxlIGRpZCBub3Qgc2VlbSB0byB3b3JrIHdpdGhvdXQgYWRkaW5nIGZvbnQtZmFtaWx5IGhlcmUuICovCiN0b2MtdGl0bGUgewogIGZvbnQtc2l6ZTogdmFyKC0tbmF2LXRpdGxlLWZvbnQtc2l6ZSk7CiAgZm9udC1mYW1pbHk6IHZhcigtLW5hdi10aXRsZS1mb250KTsKfQogCi8qCiAgVGFibGUgb2YgY29udGVudCBtYW5pcHVsYXRpb25zCiovCiAKLyogQ2hhbmdlIHRoZSBmb250IHdpZWdodCBpbiB0aGUgdGFibGUgb2YgY29udGVudHMgKi8KI3RvYyBoMSB7CiAgZm9udC13ZWlnaHQ6IDQwMDsKfQogCi8qIFRyaWFuZ2xlcyBpbiB0aGUgVE9DIHdlcmUgb25seSBkaXNwbGF5aW5nIHdoZW4gdGhlIGNvbnRlbnQgd2FzIGluIHNtYWxsIHNjcmVuIGZvcm1hdDsgaS5lLiBUT0Mgd2FzIGNvbGxwYXNlZCB1bmRlciB0aGUgaGFtYnVyZ2VyIGljb24uIFRoaXMgbWFrZXMgdGhlIHRyaWFuZ2xlIHZpc2libGUgYXQgYWxsIHRpbWVzLiAqLwojdG9jIC5ncm91cC1jb250YWluZXIuaGFzLWNoaWxkcmVuIC5hY2UtbGluZSBoMTpiZWZvcmUgewogIGNvbnRlbnQ6ICfilrbvuI4nOwogIGZsb2F0OiBsZWZ0OwogIG1hcmdpbi1sZWZ0OiAtMmVtOwogIHRyYW5zaXRpb246IHRyYW5zZm9ybSAyMDBtczsKICBmb250LXNpemU6IDc1JTsKICBkaXNwbGF5OiB2YXIoLS1uYXYtdHJpYW5nbGVzLWRpc3BsYXkpOwp9CiAKLyoKICBEb2N1bWVudCBjb250ZW50IG1hbmlwdWxhdGlvbnMKKi8KIAovKiBNb2RpZnkgdGhlIGRvYyBmb250IHNpemUuICovCiNkb2MtdGl0bGUgewogIGZvbnQtc2l6ZTogdmFyKC0tZG9jLXRpdGxlLWZvbnQtc2l6ZSk7Cn0KIAovKiBWZXJ0aWNhbGx5IGFsaWduIHRoZSBlbW90aWNvbnMgYW5kIHRleHQgaW4gdGhlIGRvY3VtZW50IGhlYWRlcnMuICovCiNkb2MgaDIgc3BhbiB7CiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTsKfQogCi8qIFRhYmxlIG1hbmlwdWxhdGlvbnMgZm9yIHRoZSBkb2N1bWVudCBjb250ZW50LiBFbnN1cmVzIHRhYmxlcyBhcmUgdGhlIHdpZHRoIG9mIHRoZSBwYWdlIGFuZCB1c2UgaGVhZGVyIHJvd3MgaGF2ZSBiYWNrZ3JvdW5kIGNvbG9yICovCiNkb2MgdGFibGUgewogIHZlcnRpY2FsLWFsaWduOnRvcDsKICB3aWR0aDogMTAwJTsKfQojZG9jIHRhYmxlIHRyOmZpcnN0LWNoaWxkIHsKICBiYWNrZ3JvdW5kOiAjRUZGN0ZFOwp9CiAKLyogVXBkYXRlIHRoZSBmb250IHNpemUgb2YgdGhlIG9uZS1saW5lcnMgaW4gdGhlIGxheW91dCBub3RlIGVsZW1lbnQuICovCiNkb2Mgc2VjdGlvbi5kb2MtbGF5b3V0Lm5vdGUgc3Bhbi5hY2UtYWxsLWJvbGQtaHRocmVlIHsKICBmb250LXNpemU6IDE0cHg7Cn0KIAovKiBIaWRlIHRoZSBmZWVkYmFjayBidXR0b24sIGluY2x1ZGVfZmVlZGJhY2sgY29uZmlnIGRvZXNuJ3QgYXBwZWFyIHRvIHdvcmsuICovCiNkb2MgYS5mZWVkYmFjay1idXR0b24sIGEuZmVlZGJhY2stYnV0dG9uOnZpc2l0ZWQgewogIGRpc3BsYXk6bm9uZTsKfQogCiNsb2dvLmRlZmF1bHQgCnsKICAtd2Via2l0LW1hc2s6IG5vbmU7CiAgd2lkdGg6MTY0cHg7CiAgaGVpZ2h0OjQxcHg7IAogIGJhY2tncm91bmQtc2l6ZTogMTAwJTsKICBiYWNrZ3JvdW5kLWltYWdlOnVybCgnZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFLUUFBQUFwQ0FZQUFBQzdtNEpIQUFBTVltbERRMUJKUTBNZ1VISnZabWxzWlFBQVNJbVZWd2RZVThrV25sdFNTV2lCQ0VnSnZRa2lOWUNVRUZvRUFhbUNxSVFra0ZCaVRBZ3FOa1NYVlhEdElvcGxSVmRGRkYxZEFWa0xJbllYeGQ0WEN5b3I2K0lxTmxUZWhBUjA5Wlh2bmUrYk8zL09uUGxQeWN5OU13RG9kUEJsc2p4VUY0QjhhWUU4UGlLRU5UNDFqVVY2QkhCQUJSaHdCU1A1QW9XTUV4Y1hEYUFNOXYrVTE5Y0FvdW92dTZpNHZoMy9yNkl2RkNrRUFDRHBFR2NLRllKOGlKc0J3RXNFTW5rQkFNUlFxTGVlVmlCVFlUSEVCbklZSU1TelZEaGJqWmVwY0tZYWJ4MndTWXpuUXR3SUFKbkc1OHV6QWRCdWhYcFdvU0FiOG1nL2d0aE5LcFJJQWRBeGdEaFFJT1lMSVU2RWVFUisvaFFWTG9iWUFkckxJTjRCTVR2ekM4N3NmL0JuRHZIeitkbERXSjNYZ0pCREpRcFpIbi9HLzFtYS95MzVlY3BCSDNhdzBjVHl5SGhWL3JDR04zS25SS2t3RGVKdWFXWk1yS3JXRUwrVkNOVjFCd0NsaXBXUlNXcDcxRlNnNE1MNkFTYkVia0orYUJURXBoQ0hTL05pb2pYNnpDeEpPQTlpdUZyUTZaSUNYcUptN2tLUklpeEJ3N2xlUGlVK2RoQm55YmtjemR3NnZuekFyOHErVlptYnhOSHczeENMZUlQOHI0ckVpU2tRVXdIQXFJV1M1QmlJdFNFMlVPUW1SS2x0TUtzaU1UZG0wRWF1akZmRmJ3TXhXeVNOQ0ZIelkrbFo4dkI0amIwc1h6R1lMMVlxbHZCaU5MaXlRSndZcWE0UHRsUEFINGpmQ09KNmtaU1ROTWdqVW95UEhzeEZLQW9OVStlT3RZbWtTWnA4c1h1eWdwQjR6ZHdlV1Y2Y3hoNG5pL0lpVkhvcmlFMFVoUW1hdWZqb0FyZzQxZng0dEt3Z0xsRWRKNTZSd3g4VHA0NEhMd1RSZ0F0Q0FRc29ZY3NFVTBBT2tMUjFOM1REWCtxUmNNQUhjcEFOUk1CRm94bWNrVEl3SW9YUEJGQUUvb1JJQkJSRDgwSUdSa1dnRU9vL0RtblZUeGVRTlRCYU9EQWpGenlHT0I5RWdUejRXemt3U3pya0xSazhnaHJKTjk0Rk1OWTgyRlJqMytvNFVCT3QwU2dIZVZrNmc1YkVNR0lvTVpJWVRuVEVUZkJBM0IrUGhzOWcyTnh4TnU0N0dPMW5lOEpqUWp2aEFlRXFvWU53YzdLa1JQNVZMR05CQitRUDEyU2MrV1hHdUIzazlNSkQ4QURJRHBseEptNENYSEJQNkllREIwSFBYbERMMWNTdHlwMzFiL0ljeXVDTG1tdnNLRzRVbERLTUVreHgrSHFtdHBPMjF4Q0xxcUpmMWtjZGErWlFWYmxESTEvNzUzNVJaeUhzbzc2MnhCWmkrN0ZUMkRIc0RIWUlhd0FzN0NqV2lKM0hEcXZ3MEJwNk5MQ0dCcjNGRDhTVEMza2szL2pqYTN5cUtxbHdxM1hyY3Z1Z0dRTUZvdWtGcWczR25TS2JJWmRraXd0WUhQZ1ZFTEY0VW9IckNKYTdtN3NiQUtwdml2bzE5Wkk1OEsxQW1HYy82K1piQWhBd283Ky8vOUJuWGRSRkFQWWZodHY4MW1lZGZTZDhIWndGNFBRYWdWSmVxTmJocWdjQnZnMTA0STR5QnViQUdqakFqTnlCTi9BSHdTQU1qQUd4SUJHa2drbXd6bUs0bnVWZ0dwZ0Y1b0ZTVUE2V2dkVmdIZGdFdG9BZFlEZllCeHJBSVhBTW5BVG53RVZ3RmR5RzY2Y1RQQU05NERYb1F4Q0VoTkFSQm1LTVdDQzJpRFBpanJDUlFDUU1pVWJpa1ZRa0E4bEdwSWdTbVlYTVI4cVJGY2c2WkROU2cveU1IRVNPSVdlUWR1UW1jaC9wUXY1RzNxTVlTa01OVURQVURoMkpzbEVPR29VbW9oUFJiSFFxV29RdVFKZWdsV2cxdWd1dFI0K2g1OUNyYUFmNkRPM0ZBS2FGTVRGTHpBVmpZMXdzRmt2RHNqQTVOZ2Nyd3lxd2Fxd09hNEwvOUdXc0ErdkczdUZFbklHemNCZTRoaVB4SkZ5QVQ4WG40SXZ4ZGZnT3ZCNXZ4Uy9qOS9FZS9CT0JUakFsT0JQOENEekNlRUkyWVJxaGxGQkIyRVk0UURnQmQxTW40VFdSU0dRUzdZaytjRGVtRW5PSU00bUxpUnVJZTRqTnhIYmlRMkl2aVVReUpqbVRBa2l4SkQ2cGdGUktXa3ZhUlRwS3VrVHFKTDBsYTVFdHlPN2tjSElhV1VvdUlWZVFkNUtQa0MrUm41RDdLTG9VVzRvZkpaWWlwTXlnTEtWc3BUUlJMbEE2S1gxVVBhbzlOWUNhU00yaHpxTldVdXVvSjZoM3FDKzF0TFNzdEh5MXhtbEp0SXExS3JYMmFwM1d1cS8xanFaUGM2SnhhZWswSlcwSmJUdXRtWGFUOXBKT3A5dlJnK2xwOUFMNkVub04vVGo5SHYydE5rUGJWWnVuTGRTZXExMmxYYTk5U2Z1NURrWEhWb2VqTTBtblNLZENaNy9PQloxdVhZcXVuUzVYbDY4N1I3ZEs5NkR1ZGQxZVBZYmVLTDFZdlh5OXhYbzc5YzdvUGRVbjZkdnBoK2tMOVJmb2I5RS9yditRZ1RHc0dWeUdnREdmc1pWeGd0RnBRRFN3TitBWjVCaVVHK3cyYURQb01kUTM5RFJNTnB4dVdHVjQyTENEaVRIdG1EeG1Ibk1wY3gvekd2UDlNTE5obkdHaVlZdUcxUTI3Tk95TjBYQ2pZQ09SVVpuUkhxT3JSdStOV2NaaHhybkd5NDBiak8rYTRDWk9KdU5NcHBsc05EbGgwajNjWUxqL2NNSHdzdUg3aHQ4eVJVMmRUT05OWjVwdU1UMXYybXRtYmhaaEpqTmJhM2Jjck51Y2FSNXNubU8reXZ5SWVaY0Z3eUxRUW1LeHl1S294UjhzUXhhSGxjZXFaTFd5ZWl4TkxTTXRsWmFiTGRzcys2enNyWktzU3F6MldOMjFwbHF6cmJPc1YxbTNXUGZZV05pTXRabGxVMnR6eTVaaXk3WVYyNjZ4UFdYN3hzN2VMc1h1ZTdzR3U2ZjJSdlk4K3lMN1d2czdEblNISUllcER0VU9WeHlKam16SFhNY05qaGVkVUNjdko3RlRsZE1GWjlUWjIxbml2TUc1ZlFSaGhPOEk2WWpxRWRkZGFDNGNsMEtYV3BmN3JrelhhTmNTMXdiWDV5TnRScWFOWEQ3eTFNaFBibDV1ZVc1YjNXNlAwaDgxWmxUSnFLWlJmN3M3dVF2Y3E5eXZlTkE5d2ozbWVqUjZ2UEIwOWhSNWJ2Uzg0Y1h3R3V2MXZWZUwxMGR2SDIrNWQ1MTNsNCtOVDRiUGVwL3JiQU4ySEhzeCs3UXZ3VGZFZDY3dklkOTNmdDUrQlg3Ny9QN3lkL0hQOWQvcC8zUzAvV2pSNksyakh3WllCZkFETmdkMEJMSUNNd0ovRE93SXNnemlCMVVIUFFpMkRoWUdid3Qrd25IazVIQjJjWjZIdUlYSVF3NkV2T0g2Y1dkem0wT3gwSWpRc3RDMk1QMndwTEIxWWZmQ3JjS3p3MnZEZXlLOEltWkdORWNTSXFNaWwwZGU1NW54Qkx3YVhzOFluekd6eDdSRzBhSVNvdFpGUFloMmlwWkhONDFGeDQ0WnUzTHNuUmpiR0dsTVF5eUk1Y1d1akwwYlp4ODNOZTdYY2NSeGNlT3F4ajJPSHhVL0svNVVBaU5oY3NMT2hOZUpJWWxMRTI4bk9TUXBrMXFTZFpMVGsydVMzNlNFcHF4STZSZy9jdnpzOGVkU1RWSWxxWTFwcExUa3RHMXB2UlBDSnF5ZTBKbnVsVjZhZm0yaS9jVHBFODlNTXBtVU4rbndaSjNKL01uN013Z1pLUms3TXo3d1kvblYvTjVNWHViNnpCNEJWN0JHOEV3WUxGd2w3QklGaUZhSW5tUUZaSzNJZXBvZGtMMHl1MHNjSks0UWQwdTRrbldTRnptUk9adHkzdVRHNW03UDdjOUx5ZHVUVDg3UHlEOG8xWmZtU2x1bm1FK1pQcVZkNWl3cmxYVk05WnU2ZW1xUFBFcStUWUVvSmlvYUN3emc0ZjI4MGtINW5mSitZV0JoVmVIYmFjblQ5ay9YbXk2ZGZuNkcwNHhGTTU0VWhSZjlOQk9mS1pqWk1zdHkxcnhaOTJkelptK2VnOHpKbk5NeTEzcnVncm1keFJIRk8rWlI1K1hPKzYzRXJXUkZ5YXY1S2ZPYkZwZ3RLRjd3OEx1STcycEx0VXZscGRlLzkvOSswMEo4b1dSaDJ5S1BSV3NYZlNvVGxwMHRkeXV2S1Ard1dMRDQ3QStqZnFqOG9YOUoxcEsycGQ1TE55NGpMcE11dTdZOGFQbU9GWG9yaWxZOFhEbDJaZjBxMXFxeVZhOVdUMTU5cHNLell0TWE2aHJsbW83SzZNckd0VFpybDYzOXNFNjg3bXBWU05XZTlhYnJGNjEvczBHNDRkTEc0STExbTh3MmxXOTYvNlBreHh1Ykl6YlhWOXRWVjJ3aGJpbmM4bmhyOHRaVFA3Ri9xdGxtc3ExODI4ZnQwdTBkTytKM3ROYjQxTlRzTk4yNXRCYXRWZFoyN1VyZmRYRjM2TzdHT3BlNnpYdVllOHIzZ3IzS3ZYLzhuUEh6dFgxUisxcjJzL2ZYL1dMN3kvb0RqQU5sOVVqOWpQcWVCbkZEUjJOcVkvdkJNUWRibXZ5YkR2enErdXYyUTVhSHFnNGJIbDU2aEhwa3daSCtvMFZIZTV0bHpkM0hzbzg5YkpuY2N2djQrT05YV3NlMXRwMklPbkg2WlBqSjQ2YzRwNDZlRGpoOTZJemZtWU5uMldjYnpubWZxei92ZGY3QWIxNi9IV2p6YnF1LzRIT2g4YUx2eGFiMjBlMUhMZ1ZkT25ZNTlQTEpLN3dyNTY3R1hHMi9sblR0eHZYMDZ4MDNoRGVlM3N5NytlSlc0YTIrMjhWM0NIZks3dXJlcmJobmVxLzZkOGZmOTNSNGR4eStIM3IvL0lPRUI3Y2ZDaDQrZTZSNDlLRnp3V1A2NDRvbkZrOXFucm8vUGRRVjNuWHhqd2wvZEQ2VFBldnJMdjFUNzgvMXp4MmUvL0pYOEYvbmU4YjNkTDZRditqL2UvRkw0NWZiWDNtK2F1bU42NzMzT3Y5MTM1dXl0OFp2ZDd4anZ6djFQdVg5azc1cEgwZ2ZLajg2Zm16NkZQWHBUbjkrZjcrTUwrY1BIQVV3Mk5Dc0xBRCszZzRBUFJVQUJqeERVQ2VvNzN3RGdxanZxUU1JL0Nlc3ZoY09pRGNBZGJCVEhkZTV6UURzaGMydUdITERYblZVVHd3R3FJZkhVTk9JSXN2RFhjMUZnemNld3R2Ky9wZG1BSkNhQVBnbzcrL3YyOURmL3hIZVViR2JBRFJQVmQ4MVZVS0VkNE1mQTFYb3FwR3dHSHdsNm52b0Z6bCszUU5WQko3ZzYvNWY2bHVLWE5EalptSUFBQUE0WlZoSlprMU5BQ29BQUFBSUFBR0hhUUFFQUFBQUFRQUFBQm9BQUFBQUFBS2dBZ0FFQUFBQUFRQUFBS1NnQXdBRUFBQUFBUUFBQUNrQUFBQUFTOXJPbndBQUNlbEpSRUZVZUFIdFcrMlYwem9RZFRqOEoxU0FxWUJRQWFZQ1FnVTRGZXhTQWQ0S0NCVWtxWUJRd1RvVkVDckFXd0doQXI5N1pZMGpqeVhieVFiTzI4VTZSNnZSekowcmFUU1JQNUtOb3JHTUVSZ2pNRVpnak1BWWdURUNZd1RHQ0l3UkdDTXdSdUNmaU1DaS9CQ2w1ZnplYXlVSHVjWXlSc0FUZ1lsSDExU2xaUXpGS3BwRWlUR1VVWTUyRWEwbmhla1AvWE1wbnFIampiZ0hHWUVubmJOT3kwK3dmNitUa2VBcU1iL2p0THpxOUhXTkZUYkV3ekhHTWtiQVJNQi9RcWJsREZhZWltekRwWXoyTVBLMFpOc3VsK0pwTTQrYVJ4cUJaa0ttNVJUci9JUkV2RDVwdldXVUFmOEZpWGt3ZmhYUEZYaW9IMTdLYUFud1RjMHozUE9mUlpabG1XRHhwUVJnTXBuc1JINkk3VEVoVTdNd25vcnhXUXNwb3dKK0MrdDdmNTcxSkxkY3JVWnZRZ3RRS1g1amMvWUIyNk5SSXhaMU1uSlJXUE54VHgvZ0twODZjNTRoR1o4Ny9kTkUrcGIyRW44Wm5yeGpBcmNkdHRxRXZlS0p2VWI5Z24wcTBJN2xmeDZCNXFlSlQ4SVRjOWw4ZCtLOHZ5RVowL3BTeTB2MnhDVENPVHpYNENtNnh0ZW5RaGZXMnBpWUN5VGxkZ0QyUVVGMExMREc1cDQrcU5Yd21kbFgrSzZ3U3FoblByT2p1ME1pTW9IOEcxM3hMSUYvNGZqNHhOODJvZjA4eWtOdmdqSjNkZDgvdHFUVXNYaWNDY2t0clI1TU1pU20vL1ZPaVllWUNBOHQ4aUFUU29NK25pamEyS1EraENpMFhtOEM3RHVGbWFML1N1blk1Umd2c1duMVdPQktvSlA3c0R2WUN2Uk5nVzBHUVU3NUhXeDVaVG4rQlNaRjd3MXFqQ3FsZ0pBRHZ4R0Zia1BqV2oxanpqV3djSzRiY0cxTlQvMEJYdVp1TE1DWlF3WnF6cDA4c1RGVVBGdVlnM095T05QQVA0VXdlRjNBSjhEcnVleWdheFRndUM2OU55ZmM3L05oWjFFV3FLV3RleVJyMGhobFNLZmkyVHM4eFZrOEdBdUwwdVZhVHdHQUdlcGVBOUZmdTFobHoybURib3A2cTJ3WmJWSmdJLzlQaGRGZDJoUHhjVnNGL0U0YmRLblN1OTBWT3R6TVJuRUJsR2xFMDhuVElGQWQrQ2FvUDFHN3lrOFlFOWNWL2EzSElYTXhsQU80Vk9PNit6emwwbkpwYWpleTN5bzgxY25aai9jZ2hpeWNic0RGSHV3dmwxTGJyWjh2a1RQeGc4OWMrL1gwNStJcnJRZlBST2dyWDhWZldvL0RFSjZsK0xzdHVNNWVGM3lucUFjMW4xL294eklHWkIvL1Z1eHN1NytwT1NJVGlPOU1QZWQwRko3S2x6d2ZVQk5SLzZrV2w2Y0MzUG9TeGNETlFtUENsc0gycXNNZXc3WUsyUVA2RlhqcDExVmF5ZVlCYzBNVGo5NVZEWm5ibFo2UDdRL3hiWXdsUElqMUFZYTVhNFE4UmYxTUhYQzF6TDR0ZDJoVDZiRHRUc2pxWlB5SyswaFdQb0d6M3VLay9JcktBWWFWSTgrdDVlQlRPRGxZNDJFa1o2UDJIcyt1dVY5NThLNHFRMGY3NzZCNzYxVDIzVUo4NWlvOE1qSGZVTitqa291dDVvR3F1WUZVcUJLamY0ZjZFWlU4QzlRZnFMcGtTc0YrMTdvNEg4MURmSXBxQ3BJeWgvQ2w2dFYvNVVPVVFSUFgya3FZMjBTdTFaTmEwa0wxL1RNZmF2UWtLMlNKbTIxK283UHF1VW5tTDN2NERVd1hUL1Z3cEJlaVoxVDM4V2tyNjA0bDNHQmhtZEtaTHFBSmhGdGwrd2o4a2pvUGwwQTNFTmFvQmJBRldsT0FQMEI0WnJ0c2RyQW5UdCtJd09VUTNqajZBM0RQcGU4WjkxSTh2ekZHakxFNHo3cDQ1c04xdlJUQVBkYWxlWmd2ZTlRWHdvMjJRSTFSM1hLRDhUTlhRYmw5UXZMRVNrdWVaT0Vrb21lVllHdUQ5WjF5d3NOTkRTV2o4SEFzanVuakllYnloVUhyS2dzRUswWE5VUXNCWXRObWtOMWtwQ25qSDAvSmxLN3pWZ0hZcGNKTFYrdkowelgvSmVaOEVHZW4xVHl4OEp5NExoL1BUTWF4WTgrbGI5dFk5WGZBWlVwbnVzMkU1Szk3SnRGUDFNUUg5dXFPdi83NVZOdDl2eEtxalFHQlBCeTc4ZzJBL29yNkI0SzFEb3cwMVhwZ2M2MWpQNkJ2K1R1K3VTTzdvazlmSjRBTHRMSVBUOVBlMnQxR2VGcnpDc3lmNjlxNkJGWnUrQU96aC83R2c2T0tKL2c4WUl1ZTFvYUZlUjN5b2U2ZklsUW5ZSVpYT25JSk9JK0hZL0lIR2VSWlRkSlRwdENCalQyMjNLTVRsUy9nWXZ0akxUYng0Q09uSGllWXozU1NEanpGSlhoT0dIUUo3UEdRT2pyZWh0Wkt5UEdFWkFLVXdhdyswdmtsZnROeVk1TG95TU5Qd3VsRmVFNzNESG5NUW9hQWZoL1EvMUcxWEQ0SERsSU14Tld3RS9scnYzc0lXY0NYRHpuemdNMUpTQ0xXdUs2WEVVKzVYY2pCbzkvQloyWjgrVnFIWHhkV1BFeUVVM2xlR2wvUElPZW83Q2JvMDVyZkN1UWRmSWNPVzh1RU1lS1dFb3FRM29lMU9zYXJWY0NUYUNWUE82MXorbE5IZGtVZmYzQ3RObmF1djVHaDkvRTBjSGJPWFc4clZpSCs0d2twbFB4aHd3cFBqYVY1YmRCMXl2RlVYQmdzdjVaS3k4KzQzUEpocUhxZFExM0Zzd0IxSDg5SGcrMzVVWVZNY1VockYzd0xyTjZnN1JEL0FHYnYwV2NlSFZVK3ZjOWYzRk1SVkt2MVhiR2theWdSTkEvdkIyVSswdEpmeXJVSXFtM3AzUSs0amZ0WDVjT0R5WjMzRlAyVndwaHVPeUVGdGNacmtUS0swZjBtS3FmbHIzdGluR1o4eXA1RHp3ZWg0MFFuNXFhVkR5aFhCdFBQczNTNHp4R2ZJUkMzYmdYSkw5U1poeXp6NkFhcEVQZ0RnRDhVK0FQR2JTUUIraGt3K21UZVdYL2xYbmZKazlZOUNMYXZlWElYNDVFVCtPbjVjRzgwRDVQRWxNQzZQbmw0TWpob0hwMGZhMkNtcUc3aCtKbXJnTXhMZDZwMFNLTWg1ZmlySFVRSkwwTDU0OW5xeGZnS0RQTk9DdmVmd25oSm4rQTFFRXZYcjRRTUlQd0hDeW5EMWs3TEFzRmZ1d2dQMTF0Z2NoZmp5amFJSzFmbnlIdklNNmZ2aWcxZXo3aUNQVUFnVHlJSzFiN0gvTGFpNitBaEpFZE5VSDJsZmhkTDR5WFdGZURZWUw2cEhTTkgrNGF5TFZ6cmE5Z0xVUXhMU0tMbG14bit1cWZ2cGJtd3V5My96V0U5dVdud3VQWVQ1SjVOQ0RIZFlPR1pObnE0M2dLWGE1emJodzhUNHAycjY1RTM0RXhkakdkY25sanVacmx3a1hmZ1NhVEQxc1B6RWVyUExzWWozMEUzQXhjVG9pNzNXUmQ4WXhCOVI1M1doTlZsT3BaeGdKbFpqQU14djRwNks0b25JdlMyVEVRT051U2x1WStNcjNQU2toUG1BMUFqRUQ3NEJYVzh4UEpVeVM3SW1ZSnJNNUJ2ZzdHSjd5c3BBUHAyd1BXaGJlNHFQUElkeGxwQzN6VzMzK1FCenJjSGFZOHZ6SFhaZ0NPdGU1RzU4azJkUHNYTUhRZnlIcm9iaGVFdHhyWG9ub293c0ozamt2dDZJTFlONDM4eGxsRUNROTQybnFUWjlhQ0ZmMnVEMEFYWFhMNk5hdmpiSUtjSTVCb0dCak5CZllZcWhadWVvL0piRTdhOUJiZ0NmQW1BNUdNVnZqdklhMVJ5K2VibXpuOExIQjlXT0xjY0lubGVvYkp3VHJRelNRcTByV0w1VDE0WHhwcUJMTGUxNWdYZnN1NVlBYm9NZUsydSs1TmFHaXJ3NjczcVByRHY4cUlaZjlqN3o3MDJQSlkrQWoyMW05cTdKR0FidXdLLzAvZWlkNVRMQURCVlhuYUx5N0IxczV3ZmhCUlBTUHdPK3ZoSkRvM0UxME84ZjJ4OVdrSU8vNEwrSVNYazM5eVA4eE9TcytTRFRuVmF2Z3RNbWkvTlV5UmpFYkQvcytveElmMWJmNytFRk03ajY1d1hWc1ZUa2YvOHRSYkkyRFlqTUNaa014N1N1MHhDa3ExNkxaVGh4SXp0cVhpUVFjYTJIWUV4SWRzeG9lWnlDZW5uSDdXQkNDQWhjOWVFaDRiRTdZL3lHSUV4QW1NRXhnaU1FUmdqTUVaZ2pNQVlnVEVDd3lMd0gxMTNOZ1hTUHVBWUFBQUFBRWxGVGtTdVFtQ0MnKTsKfQ==" id="toc-css" rel="stylesheet" type="text/css"/>
+<link href="l6_principal_software_engineer.html" id="doc-css" rel="stylesheet" type="text/css"/>
+<title>L6 Principal Software Engineer - Engineering Career Framework</title>
+<script type="text/javascript">
+  toc_title = "Engineering Career Framework"
+  toc_id = "5WmkZ4j0CeF2lepGwXrb7"
+  toc_links = {"eXKpr8m6HzmIFbTv1h0Md": "what_is_impact", "xm5H37TZjhIASZ9bfL4at": "l4_machine_learning_engineer", "V5jnNRuvhGBAkUXL40vmD": "l5_staff_software_engineer", "WjCUzeRLeDGRXAdQkUOrm": "overview", "Q0GgoTpKjIdyBDTz7OJWu": "l4_quality_assurance_engineer", "oxIibPijlKRu8QpChWIf3": "mle-_appendix", "zpZZaciblyPxqtCMwudS6": "l2_technical_program_manager", "kpHa86MKZOhcB6H7FpO8t": "l4_dynamo_engineer", "rR58rrqvSBqJ0MZYSA2Cv": "l5_staff_machine_learning_engineer", "RVlp3iPq09aKebFPErCfM": "tpm-_appendix", "SsEBzr3AvQcfrWrqI0hG4": "l6_principal_software_engineer", "FyfxQv7D7K3nGX4OpNAHn": "swe-_appendix", "krIy5zEcAvFVnP0qhHmjl": "l5_staff_reliability_engineer", "guSRpzKJSAvIHfPjLQQsM": "m3_engineering_manager", "g2kzGMX9gOHxJAfcktLCT": "promotion_principles_and_guidelines", "uVHtXtAQT0BdtnDzBhU0V": "m4_engineering_manager", "YX0RPMq54AbAno9VSakcQ": "l3_reliability_engineer", "qMQGVfAUkfxKWCNcltItJ": "l3_technical_program_manager", "zv7DcosXd1deGdrE3lwth": "l7_senior_principal_reliability_engineer", "qeGmbyv8ivQJ0NfM6fCRx": "l1_technical_program_manager", "MWaUiFcpn8uL3sDr5bflM": "l1_dynamo_engineer", "zUhFQOOASNSVqEHIjtQuy": "l6_principal_reliability_engineer", "9OPepkWbuw7OsJua6SuKW": "m7_senior_engineering_director", "iLeGcPPoxemREBhqsRtV7": "l3_machine_learning_engineer", "4N5dpufSDdJkyYc7Z0JtI": "l3_software_engineer", "IhvL2TMPKx0Lwq9F4SwoT": "sre-_appendix", "kaIfeep3aQdIQwvQjtVsu": "l2_machine_learning_engineer", "Ut18OuIJqJHFxwGIU2tud": "l1_reliability_engineer", "ukT0w2v2p2mUxF9bXQVB1": "m6_engineering_director", "KjKp8ab04Th3FM11sACoW": "l2_dynamo_engineer", "6W7P3f2yO7piDPpX6nE0B": "l4_software_engineer", "ebWRL7zfXiNSqYhW8NPvX": "l2_software_engineer", "bAA13RxiQ74HimuVQSrSQ": "glossary", "IYhPnmre7CA851MVi77x4": "l5_staff_quality_assurance_engineer", "dqh1LkjyZNwuWMuQ9hX09": "l5_staff_technical_program_manager", "4ayoUEbstcsWQ4q5JeOGx": "l2_quality_assurance_engineer", "vpTub4PpRSSwbS1tiFszQ": "l6_principal_technical_program_manager", "nHIKzITxWUjmBnnyPc1kf": "l4_technical_program_manager", "dPpKDX5mGOSLYERSKuAzY": "l3_dynamo_engineer", "xDk8T4cy6jiPSenxgXAEU": "l1_machine_learning_engineer", "a5Qrc8wECJDvy8WC30NUR": "l2_reliability_engineer", "gKn5WOQFPWZzmvKEE26nV": "m5_senior_engineering_manager", "PDdKVxSOoEOkROUUkccUH": "l1_software_engineer", "pdY0rMlhEh55WfQTa3t60": "l4_reliability_engineer", "oSYMYY1k3Gs5YHpe0idua": "de-_appendix", "9jSa7H9gotjKzKcYgvNxr": "l5_staff_dynamo_engineer", "s9hPZhyBye7sEhB6j0ayU": "l1_quality_assurance_engineer", "l7cl9TYuxONJf6sDc7r66": "l3_quality_assurance_engineer", "JbjnXBQz4c9vw48nPuKes": "l7_senior_principal_software_engineer", "1RRMcRO2HX8OYjAEd3rat": "qae-_appendix"}
+  doc_id = "SsEBzr3AvQcfrWrqI0hG4"
+  doc_revs = "5WmkZ4j0CeF2lepGwXrb7@3370,SsEBzr3AvQcfrWrqI0hG4@16"
+  
+  page_id = "eng-career/l6_principal_software_engineer"
+
+  
+    search_scope = "#eng-career"
+  
+
+  function checkNow() {
+    checkRevisions(page_id, doc_revs)
+  }
+  checkNow()
+</script>
+<body class="nav-left" id="eng-career">
+<div id="toc-toggle" onclick="toggleLeftnav()">☰</div>
+<div id="toc-shield" onclick="toggleLeftnav()"></div>
+<div id="toc">
+<div id="toc-close" onclick="toggleLeftnav()">×</div>
+<div id="toc-header">
+<div class="default" id="logo"></div>
+<div id="toc-title">Engineering Career Framework</div>
+</div>
+
+<div id="toc-content"><div class="ace-line hidden" dir="auto"><code><span>/*</span><span> This page looks better viewed in binder at drl/eng-</span><span>career</span><span>.</span><span> </span><span>*/</span></code></div><div class="ace-line hidden" dir="auto"> </div><div class="ace-line selectable" data-h1="none" dir="auto"><a class="locallink" href="overview.html" id="toc-overview" next_href="what_is_impact" next_name="What is Impact?">Overview</a></div><div class="group-container has-children expanded" id="group-of-066408262179555493154256"><div class="ace-line header selectable" dir="auto"><h1 data-usually-unique-id="066408262179555493154256" onclick='$("#group-of-066408262179555493154256").toggleClass("expanded")'><span>Software Engineer</span><span> </span><span>(SWE)</span></h1></div><div class="child-container hidable 066408262179555493154256" id="children-of-066408262179555493154256"><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l1_software_engineer.html" id="toc-l1_software_engineer" next_href="l2_software_engineer" next_name="L2 Software Engineer" prev_href="what_is_impact" prev_name="What is Impact?">L1 Software Engineer</a></div><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l2_software_engineer.html" id="toc-l2_software_engineer" next_href="l3_software_engineer" next_name="L3 Software Engineer" prev_href="l1_software_engineer" prev_name="L1 Software Engineer">L2 Software Engineer</a></div><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l3_software_engineer.html" id="toc-l3_software_engineer" next_href="l4_software_engineer" next_name="L4 Software Engineer" prev_href="l2_software_engineer" prev_name="L2 Software Engineer">L3 Software Engineer</a></div><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l4_software_engineer.html" id="toc-l4_software_engineer" next_href="l5_staff_software_engineer" next_name="L5 Staff Software Engineer" prev_href="l3_software_engineer" prev_name="L3 Software Engineer">L4 Software Engineer</a></div><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l5_staff_software_engineer.html" id="toc-l5_staff_software_engineer" next_href="l6_principal_software_engineer" next_name="L6 Principal Software Engineer" prev_href="l4_software_engineer" prev_name="L4 Software Engineer">L5 Staff Software Engineer</a></div><div class="ace-line selectable selected" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l6_principal_software_engineer.html" id="toc-l6_principal_software_engineer" next_href="l7_senior_principal_software_engineer" next_name="L7 Senior Principal Software Engineer" prev_href="l5_staff_software_engineer" prev_name="L5 Staff Software Engineer">L6 Principal Software Engineer</a></div><div class="ace-line selectable" data-h1="066408262179555493154256" dir="auto"><a class="locallink" href="l7_senior_principal_software_engineer.html" id="toc-l7_senior_principal_software_engineer" next_href="swe-_appendix" next_name="SWE: Appendix" prev_href="l6_principal_software_engineer" prev_name="L6 Principal Software Engineer">L7 Senior Principal Software Engineer</a></div></div></div><div class="ace-line hidden" dir="auto"> </div><div class="ace-line hidden" dir="auto"> </div><div class="doc-html"></div><div class="ace-line hidden" dir="auto"> </div></div>
+
+</div>
+<div id="doc">
+<div class="spinner">
+<div class="square alpha"></div>
+<div class="square beta"></div>
+<div class="square gamma"></div>
+<div class="square delta"></div>
+</div>
+<div id="doc-search-results"></div>
+<iframe id="doc-frame" name="doc-frame" onload="this.contentWindow.focus()" src="l6_principal_software_engineer.html"></iframe>
+<div id="doc-container">
+<div id="doc-content"><div class="ace-line" dir="auto" id="doc-title"><span>L6 Principal Software Engineer</span></div><section class="doc-layout note"><div><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b><i>I deliver results against a strategic company-level business objective or key component of the EPD mission</i></b></span></span></div></div></section><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="241;255;206" data-ace-table-row-highlight-colors="#EFF6FD;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Scope</b></span></span></div><div class="ace-line" dir="auto"><span><i>Area of ownership and level of autonomy / ambiguity</i></span></div></td><td><div class="ace-line" dir="auto"><span><b>Collaborative</b></span><span> </span><span><b>Reach</b></span></div><div class="ace-line" dir="auto"><span><i>Organizational reach and extent of influence</i></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Impact Levers</b></span></span></div><div class="ace-line" dir="auto"><span><i>Technical levers typically exercised to achieve business impact</i></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I own and deliver org/company-wide multi-year, multi-team </span><span>goals</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I t</span><span>ake a multi-year, industry-leading perspective</span><span>, </span><span>ensuring th</span><span>at our products</span><span> adapt to scale, usage</span><span>,</span><span> and/or business needs well beyond Dropbox’s current scope.</span></li></ul></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I typically influence</span><span> </span><span>the technical strategy of a </span><span>group</span><span>. I am often partnering closely with Directors/senior EPD leadership to ensure the health of EPD as a whole and influence the overall direction of EPD</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I t</span><span>ranscend organizational boundaries and proactively identify the best ways to leverage </span><span>myself</span><span>.</span></li></ul></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>Domain Expertise - I</span><span> d</span><span>emonstrate</span><span> a high level of</span><span> </span><span>depth </span><span>in a particular platform or product category that brings unique business value.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>Technical Strategy - I align the technical strategy for several projects in my group to broader initiatives across EPD</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>Product </span><span>Expertise</span><span> - I</span><span> </span><span>consistently</span><span> influence product decisions/scope and determine the right technical tradeoffs to deliver customer value quickly with high quality. </span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>Innovation - I</span><span> partner with cross-functional stakeholders to identify major new business opportunities unlocked by technical capabilities.</span></li></ul></div></td></tr></tbody></table></div></div><div class="ace-line" dir="auto"><h2 data-usually-unique-id="749289834549582581349954"><span><img alt="trophy" data-emoji-ch="🏆" height="24" src="https://paper.dropboxstatic.com/static/img/ace/emoji/1f3c6.png?version=6.0.0" title="trophy"/></span><span> </span><span>Results</span></h2></div><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="135;567" data-ace-table-row-highlight-colors="#EFF6FD;;;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Responsibility</b></span></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Key </b></span><span><b>B</b></span><span><b>ehaviors</b></span></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Impact</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I identify and execute on significant </span><span>g</span><span>roup</span><span>/company-wide o</span><span>pportunities by understanding how technical capabilities meet customer needs. </span><span>I</span><span> proactively work with business owners to help them understand these new capabilities and work with them to build the right roadmap for the business.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> execute large projects </span><span>to </span><span>a very high </span><span>standard — </span><span>e.g. </span><span>against </span><span>a tight deadline with significant consequences of failure</span><span>, </span><span>or in a manner that allows rapid learning to </span><span>clarify</span><span> significant ambiguity</span><span>, or </span><span>to a standard of quality well exceeding that of the current system</span><span> </span><span>(though</span><span> not all simultaneously)</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I </span><span>proactively identify and </span><span>help to refocus my team's efforts when </span><span>projects are off-course or not technically feasible and </span><span>results aren’t moving the needle for our business/team goals or serving the needs of customers in a meaningful way</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I know which levers to pull to drive meaningful results and understand the wider, cross-functional implications of my work</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Ownership</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I have a sense of responsibility and obligation to act on opportunities I see across the </span><span>engineering </span><span>org/company</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I transcend organizational boundaries by taking a holistic view of my group’s goals and taking responsibility across my group, not just within my immediate scope of ownership.</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Decision Making</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I act thoughtfully and decisively in critical situations even when making challenging or unpopular decisions</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I'm able to reach the right</span><span><i> </i></span><span>decision despite conflicting perspectives</span></li></ul></div></td></tr></tbody></table></div></div><div class="ace-line" dir="auto"><h2 data-usually-unique-id="139965714664048337052908"><span><img alt="glowing star" data-emoji-ch="🌟" height="24" src="https://paper.dropboxstatic.com/static/img/ace/emoji/1f31f.png?version=6.0.0" title="glowing star"/></span><span> </span><span>Direction</span></h2></div><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="135;425" data-ace-table-row-highlight-colors="#EFF6FD;;;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Responsibility</b></span></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Key </b></span><span><b>B</b></span><span><b>ehaviors</b></span></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Agility</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>When necessary, I am able to introduce change into the organization, help others understand the business case for change, and create excitement to drive adoption of the change</span><span> </span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Innovation</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I push boundaries to generate and implement breakthrough ideas that </span><span>aim to</span><span> drive our products and tools forward </span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I </span><span>demonstrate creativity, e.g. </span><span>by </span><span>finding simple, generalizable solutions that open up or unblock new technical or business opportunities in unexpected ways.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I create an environment supporting experimentation and iteration</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Strategy</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I </span><span> </span><span>partner with Directors and other members of senior EPD leadership </span><span>to define a long-term vision for my </span><span>group</span><span> </span><span>that factor</span><span>s</span><span> in</span><span> both a </span><span>deep understand</span><span>ing of</span><span> what is happening in the business and in the market</span><span> as well as the</span><span> technical limitations and possibilities of Dropbox’s software and systems.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I anticipate challenges and am able to influence the technical direction of the team or org to execute on that vision even in the face of significant misalignment</span></li></ul></div></td></tr></tbody></table></div></div><div class="ace-line" dir="auto"><h2 data-usually-unique-id="854918605017492137562273"><span><img alt="deciduous tree" data-emoji-ch="🌳" height="24" src="https://paper.dropboxstatic.com/static/img/ace/emoji/1f333.png?version=6.0.0" title="deciduous tree"/></span><span> </span><span>Talent</span></h2></div><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="135;568" data-ace-table-row-highlight-colors="#EFF6FD;;;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Responsibility</b></span></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Key </b></span><span><b>B</b></span><span><b>ehaviors</b></span></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Personal Growth</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I proactively ask for feedback from those I work with and identify ways to act upon it</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I have self-awareness about my strengths and areas for development</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I drive discussions with my manager about aspirational goals and seek out opportunities to learn and grow</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Hiring</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> </span><span>am</span><span> an active participant in the hiring process for senior </span><span>candidates</span><span> </span><span>(for</span><span> example, by participating in hiring committee,</span><span> debriefs</span><span> etc)</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I attract talent for a variety of roles with diversity in mind </span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> </span><span>gain the trust of candidates</span><span> and </span><span>can represent Dropbox's mission, strategy, and culture throughout the interview process</span><span>. </span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> a</span><span>m an effective partner to my manager and  am</span><span> able to represent </span><span>my</span><span> team’s technical challenges to candidates in an exciting way</span><span> </span><span>(e.g.</span><span> 1:1 selling, blog posts, public speaking)</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Talent Development</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I model a standard of excellence that supports a culture of high performance on my team</span><span>. I</span><span> drive </span><span>EPD-wide </span><span>processes and define the bar for </span><span>engineering-wide </span><span>quality and best practices</span><span>.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I invest time to coach and mentor </span><span>my teammates</span><span> </span><span>(</span><span>particularly</span><span> ones looking to grow into L</span><span>5</span><span>/L</span><span>6). I </span><span>take into account their skills, backgrounds, working styles</span><span> and solicit and provide thoughtful, constructive feedback to them</span><span>.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> </span><span>devote time to </span><span>spread</span><span>ing</span><span> </span><span>my</span><span> knowledge </span><span>widely </span><span>via talks</span><span>, blog posts</span><span> </span><span>or written</span><span> </span><span>documentation</span><span>.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I participate in SPRiTEs calibration sessions by providing meaningful feedback to ensure fair and consistent decisions</span></li></ul></div></td></tr></tbody></table></div></div><div class="ace-line" dir="auto"><h2 data-usually-unique-id="485213083790190186130351"><span><img alt="rainbow" data-emoji-ch="🌈" height="24" src="https://paper.dropboxstatic.com/static/img/ace/emoji/1f308.png?version=6.0.0" title="rainbow"/></span><span> </span><span>Culture</span></h2></div><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="135;429" data-ace-table-row-highlight-colors="#EFF6FD;;;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Responsibility</b></span></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Key </b></span><span><b>B</b></span><span><b>ehaviors</b></span></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Collaboration</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I help break down silos within and across functions and influence others to reach the best outcome for Dropbox</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I build deep cross-functional relationships, facilitate the right conversations, and settle disagreements by managing different viewpoints</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I disagree and commit when necessary to move critical priorities forward</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Organizational Health</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> </span><span>act as a partner </span><span>to </span><span>m</span><span>anagers </span><span>in setting the cultural tone for the </span><span>org. </span><span>I create an inclusive environment for others and ensure diverse perspectives are included</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>Working with </span><span>my</span><span> manager, </span><span>I</span><span> leverage the</span><span> strengths &amp; skills</span><span> of</span><span> the members of my team</span><span>, and help identify talent gaps required for team success</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I personify Dropbox's culture and values</span><span>. </span><span>I champion community building efforts and inclusion initiatives</span><span>. I </span><span>work in close partnership with </span><span>senior EPD leadership </span><span>to ensure a healthy engineering org. </span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> lead by example.</span><span> </span><span>I</span><span> a</span><span>m</span><span> aware of </span><span>my</span><span> public presence and actions and </span><span>my</span><span> influence on the people around </span><span>me</span><span> and Dropbox’s culture</span><span>.</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Communication</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I develop compelling messages and effectively present them at the executive level</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I fine tune my approach to getting buy-in and influencing stakeholders across a variety of audiences </span></li></ul></div></td></tr></tbody></table></div></div><div class="ace-line" dir="auto"><h2 data-usually-unique-id="006246748450273111671056"><span><img alt="owl" data-emoji-ch="🦉" height="24" src="https://paper.dropboxstatic.com/static/img/ace/emoji/1f989.png?version=6.0.0" title="owl"/></span><span> Craft</span></h2></div><div class="ace-line" dir="auto"><span>Like Staff Engineers, </span><span>I</span><span> have a well-rounded set of technical skills and development methodologies, and apply them with a sophisticated approach that is best suited for each project. </span><span>I</span><span> design systems that are far from </span><span>my</span><span> previous experience, anticipating scale and scope beyond the current requirements at Dropbox or in areas otherwise unexplored. </span><span>I</span><span> make or participate in discussions around making sweeping technical choices that lack clearly correct answers, but a</span><span>m</span><span> able to articulate the rationale and technical vision behind those choices. </span><span>I</span><span> </span><span>partner with cross-functional stakeholders to identify major new business opportunities unlocked by technical capabilities.</span></div><div class="ace-line" dir="auto"><div><table data-ace-table-col-widths="147;" data-ace-table-row-highlight-colors="#EFF6FD;;;;"><tbody><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Responsibility</b></span></span></div></td><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Key Behaviors</b></span></span></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Code fluency</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>The expectations for code fluency do not go up beyond L3</span><span> </span><span>(though</span><span> some specialist engineers may go deep in this area)</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Software design</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>The expectations for software design do not go up beyond L5.</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Architecture Design</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> can design systems that require research on what is possible rather than relying on </span><span>my</span><span> past experience, and where, consequently, a significant portion of the challenge is designing an appropriately staged validation plan.</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> define the high level systems we need to build to meet strategic objectives</span></li></ul></div></td></tr><tr><td><div class="ace-line" dir="auto"><span class="ace-all-bold-hthree"><span><b>Technical Strategy</b></span></span></div></td><td><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> a</span><span>m</span><span> responsible for making technical choices that have no one clearly correct answer but whose consequences have a sweeping effect across </span><span>my</span><span> scope in the organization</span></li></ul></div><div class="ace-line" dir="auto"><ul class="listtype-bullet listindent1 list-bullet1" style="list-style-type: disc; margin: 0 0 0 1.5em; padding: 0"><li style="margin: 0; padding: 0;"><span>I</span><span> rally </span><span>my</span><span> organization around those choices by providing a clear rationale and technical vision backing them</span></li></ul></div></td></tr></tbody></table></div></div><div id="doc-nav" style="display:none;"></div></div>
+<div id="doc-footer">
+<a class="locallink" href="l7_senior_principal_software_engineer.html" id="footer-next-link"><div class="label">Next</div>
+<span class="name">L7 Senior Principal Software Engineer</span><span class="direction">→</span></a>
+</div>
+</div>
+
+<a class="navlink locallink" href="l7_senior_principal_software_engineer.html" id="next-link"><span class="name">L7 Senior Principal Software Engineer</span>
+<span class="direction">→</span></a> <a class="navlink locallink" href="l5_staff_software_engineer.html" id="prev-link"><span class="direction">←</span>
+<span class="name">L5 Staff Software Engineer</span></a>
+</div>
+</body>
+<script type="text/javascript">
+  $.featherlight.defaults.openSpeed = 100;
+  $.featherlight.defaults.closeSpeed = 100;
+  $.featherlight.defaults.variant = "lightbox";
+  $("a.gallery").featherlightGallery({
+    previousIcon: "&#9664;" /* Code that is used as previous icon */,
+    nextIcon: "&#9654;" /* Code that is used as next icon */,
+    galleryFadeIn: 100 /* fadeIn speed when slide is loaded */,
+    galleryFadeOut: 300 /* fadeOut speed before slide is loaded */
+  });
+</script>
+<script type="text/javascript">
+  function highlight_words(keywords, elements) {
+    if (keywords) {
+      var textNodes;
+      keywords = keywords.replace(/\W/g, "");
+      var str = keywords.split(" ");
+      $(str).each(function() {
+        var term = this;
+        elements.each(function() {
+          var element = this;
+          var textNodes = $(this)
+            .contents()
+            .filter(function() {
+              return this.nodeType === 3;
+            });
+          textNodes.each(function() {
+            var content = $(this).text();
+            var regex = new RegExp(term, "gi");
+            content = content.replace(
+              regex,
+              '<span class="highlight">' + term + "</span>"
+            );
+            $(this).replaceWith(content);
+          });
+        });
+      });
+    }
+  }
+  var urlParams = new URLSearchParams(window.location.search);
+  var query = urlParams.get("q");
+  if (query) {
+    highlight_words(query, $("#doc .ace-line span"));
+    scrollToElement($(".highlight"));
+  }
+
+  $("#toc-search-field").on("input", function(e) {
+    var value = $("#toc-search-field").val();
+    search($("#toc-search-field").val());
+  });
+  var currentSearch = undefined;
+  function clearSearch() {
+    $("body").removeClass("use-search");
+  }
+  function relPathToAbs(sRelPath) {
+    var nUpLn,
+      sDir = "",
+      sPath = location.pathname.replace(
+        /[^\/]*$/,
+        sRelPath.replace(/(\/|^)(?:\.?\/+)+/g, "$1")
+      );
+    for (
+      var nEnd, nStart = 0;
+      (nEnd = sPath.indexOf("/../", nStart)), nEnd > -1;
+      nStart = nEnd + nUpLn
+    ) {
+      nUpLn = /^\/(?:\.\.\/)*/.exec(sPath.slice(nEnd))[0].length;
+      sDir = (sDir + sPath.substring(nStart, nEnd)).replace(
+        new RegExp("(?:\\\/+[^\\\/]*){0," + (nUpLn - 1) / 3 + "}$"),
+        "/"
+      );
+    }
+    return sDir + sPath.substr(nStart);
+  }
+  function search(query) {
+    var container = $("#doc-search-results");
+    if (query.length > 2) {
+      var thisSearch =
+        "/binder/_search/" +
+        encodeURIComponent(query + ' "' + search_scope + '"');
+      currentSearch = thisSearch;
+
+      $("body").addClass("searching");
+      scrollToTop();
+
+      $.get(thisSearch, function(results) {
+        if (thisSearch != currentSearch) {
+          // console.log("ignoring late load of ", thisSearch);
+          return;
+        }
+
+        container.empty();
+        container.append(
+          $('<div id="doc-title" class="title">').text("Search: " + query)
+        );
+        container.append(
+          $('<div id="doc-help-text" class="help-text">').append(
+            "<em>Didn't find what you're looking for? <strong><a href="https://app.dropboxer.net/binder/eng-career/\&quot;https://docs.google.com/forms/d/e/1FAIpQLScYm7dDJVsrz1tYVY3tjQybB1iTHu4nzXKn0nOPa6YWZTKAYg/viewform\&quot;">Let us know</a></strong>.</em>"
+          )
+        );
+
+        var localResults = $('<div class="local-results">');
+        container.append(localResults);
+
+        var externalResults = $('<div class="external-results">');
+        container.append(externalResults);
+
+        var docsearchResults = $('<div class="docsearch-results">');
+        // uncomment if we want to display these results
+        // container.append(docsearchResults);
+
+        externalResults.on("click", function(e) {
+          $("#doc-search-results").addClass("expanded");
+        });
+
+        // docsearchResults.on("click", function(e) {
+        //   $("#doc-search-results").addClass("expanded");
+        // });
+
+        var localCount = 0;
+        var externalCount = 0;
+        var docsearchCount = 0;
+        var docs = results.docs;
+        for (var i = 0; i < docs.length; i++) {
+          var doc = docs[i];
+          var toc_link = toc_links[doc.doc_id];
+          var external = false;
+          if (!toc_link) {
+            toc_link = doc.doc_id;
+            external = true;
+          }
+          var url = toc_link + "?q=" + escape(query);
+          var link = $("<a>", { class: "a result" }).attr("href", url);
+
+          if (external) {
+            continue;
+            // externalCount++
+            // if (externalCount > 10) continue;
+            // link.addClass("external")
+            // externalResults.append(link);
+          } else {
+            localCount++;
+            if (localCount > 10) continue;
+            localResults.append(link);
+          }
+
+          var title = $("<div>", { class: "title" }).html(doc.title);
+
+          var address = $("<div>", { class: "address" }).html(
+            relPathToAbs(toc_link)
+          );
+          var snippet = $("<div>", { class: "snippet" }).html(doc.snippets[0]);
+
+          link.append(title);
+          link.append(address);
+          link.append(snippet);
+        }
+
+        var genericSearchScope = "#binder";
+        if (search_scope != genericSearchScope) {
+          // console.log("running external search");
+          var externalSearch =
+            "/binder/_search/" +
+            encodeURIComponent(query + ' "' + genericSearchScope + '"');
+          currentxsearch = externalSearch;
+          // console.log("running external search: " + externalSearch);
+          $.get(externalSearch, function(externaldata) {
+            if (externalSearch != currentxsearch) {
+              // console.log("ignoring late load of ", currentxsearch)
+              return;
+            }
+            var extdocs = externaldata.docs;
+            for (var i = 0; i < extdocs.length; i++) {
+              externalCount++;
+              if (externalCount > 10) break;
+              var xdoc = extdocs[i];
+              // console.log('got id: ' + xdoc.doc_id + ' ' + externalCount);
+              toc_link = toc_links[xdoc.doc_id];
+              if (!toc_link) {
+                toc_link = xdoc.doc_id;
+              }
+
+              // var url = toc_link + "?q=" + escape(genericSearchScope)
+              // var link = $("<a>", {"class": "a result"}).attr("href", url);
+              // console.log(link)
+
+              // link.addClass("external")
+              // externalResults.append(link)
+
+              var title = $("<div>", { class: "title" }).html(xdoc.title);
+              var address = $("<div>", { class: "address" }).html(
+                relPathToAbs(toc_link)
+              );
+              var snippet = $("<div>", { class: "snippet" }).html(
+                xdoc.snippets[0]
+              );
+
+              var taglist = xdoc.snippets[0]
+                .replace(/[^a-zA-Z0-9 # _]/g, " ")
+                .split(" ");
+              // console.log(taglist)
+
+              var bindertagindex = taglist.findIndex(element =>
+                element.includes("#binder_")
+              );
+              if (bindertagindex == -1) {
+                var binderpath = relPathToAbs(toc_link);
+                // console.log('relpath: ' + binderpath)
+              } else {
+                var bindertag = taglist[bindertagindex]
+                  .replace("#", "")
+                  .split("_")[1];
+                var binderpath = "/binder/" + bindertag + "/" + toc_link;
+              }
+
+              var binderaddress = $("<div>", { class: "address" }).html(
+                binderpath
+              );
+              // console.log("taglist", bindertag)
+
+              var url = binderpath + "?q=" + escape(genericSearchScope);
+              var link = $("<a>", { class: "a result" }).attr("href", url);
+
+              link.addClass("external");
+              externalResults.append(link);
+
+              link.append(title);
+              link.append(binderaddress);
+              link.append(snippet);
+            }
+            if (externalCount) {
+              externalResults.prepend(
+                $('<h2 class="title">').text(
+                  externalResults.children().length +
+                    " results from other binders"
+                )
+              );
+            } else {
+              externalResults.append(
+                $('<h2 class="title">').text(
+                  "Matches across all tagged binders"
+                )
+              );
+              $("#doc-search-results").addClass("expanded");
+            }
+          });
+        }
+
+        // Start of new docsearch search
+
+        // Define the location of the search service
+        const SearchServiceLocation = "https://msolo-dbx.dev.corp.dropbox.com";
+        const SearchUrl = SearchServiceLocation + "/binder/_search/" + query;
+        $.get(SearchUrl, function(docsearchdata) {
+          var docsearchdocs = docsearchdata.docs;
+          for (var i = 0; i < docsearchdocs.length; i++) {
+            docsearchCount++;
+            if (docsearchCount > 10) break;
+
+            var xmdoc = docsearchdocs[i];
+            // console.log('got id: ' + xdoc.doc_id + ' ' + externalCount);
+            toc_link = toc_links[xmdoc.doc_id];
+            if (!toc_link) {
+              toc_link = xmdoc.doc_id;
+            }
+
+            var title = $("<div>", { class: "title" }).html(xmdoc.title);
+            var address = $("<div>", { class: "address" }).html(
+              relPathToAbs(toc_link)
+            );
+            var snippet = $("<div>", { class: "snippet" }).html(
+              xmdoc.snippets[0]
+            );
+
+            var taglist = xmdoc.snippets[0]
+              .replace(/[^a-zA-Z0-9 # _]/g, " ")
+              .split(" ");
+
+            var bindertagindex = taglist.findIndex(element =>
+              element.includes("#binder_")
+            );
+            if (bindertagindex == -1) {
+              var binderpath = relPathToAbs(toc_link);
+            } else {
+              var bindertag = taglist[bindertagindex]
+                .replace("#", "")
+                .split("_")[1];
+              var binderpath = "/binder/" + bindertag + "/" + toc_link;
+            }
+
+            var binderaddress = $("<div>", { class: "address" }).html(
+              binderpath
+            );
+
+            // Especially for our dev environments, we want to make sure that
+            // any redirect locations match the current hostname
+            var currentlocation = window.location.href.split("/");
+            var whereami = currentlocation[0] + "//" + currentlocation[2];
+
+            var urlprepend = SearchServiceLocation + "/url?url=" + whereami;
+            var url =
+              urlprepend +
+              binderpath +
+              "&q=" +
+              escape(query + "+" + genericSearchScope) +
+              "&rank=" +
+              escape(i);
+            var link = $("<a>", { class: "a result" }).attr("href", url);
+
+            link.addClass("external");
+            docsearchResults.append(link);
+
+            link.append(title);
+            link.append(binderaddress);
+            link.append(snippet);
+          }
+          if (docsearchCount) {
+            docsearchResults.prepend(
+              $('<h2 class="title">').text(
+                docsearchResults.children().length +
+                  " results from experimental search - only on corpnet"
+              )
+            );
+          } else {
+            docsearchResults.append(
+              $('<h2 class="title">').text(
+                "No custom search matches, either none exist or you are not on corpnet"
+              )
+            );
+            $("#docsearch-search-results").addClass("expanded");
+          }
+        });
+        // End of docsearch search
+
+        if (localCount) {
+          localResults.prepend(
+            $('<h2 class="title">').text(
+              localResults.children().length + " results in this binder"
+            )
+          );
+        } else {
+          localResults.append(
+            $('<h2 class="title">').text("No matches in these docs")
+          );
+          $("#doc-search-results").addClass("expanded");
+        }
+
+        // This functionality will be replaced.  It currently returns docs inside of the TOC (such as the TOC itself),
+        // rather than actual "external" docs.
+        // if (externalCount) {
+        //   externalResults.prepend($('<h2 id="external-title" class="title">').text("Results from other docs"))
+        // } else {
+        //   externalResults.append($('<h2 class="title">').text("No external matches"))
+        // }
+        $("body").removeClass("searching");
+        $("body").addClass("use-search");
+      });
+    } else {
+      $("body").removeClass("use-search");
+      currentSearch = undefined;
+      container.empty();
+    }
+  }
+</script>
+<script type="text/javascript">
+  enable_safeWindowOpen();
+</script>
+<script type="text/javascript">
+
+  // $(document).ready(function() {
+  //   var hash = window.location.hash
+  //   if (hash) {
+  //     console.log(hash, hash.split(":").shift())
+  //   }
+  // });
+
+    
+        $('.framelink').click(loadLocalLink)
+    
+
+
+    var lastState = "";
+    var lastScrolled = false;
+    $(document).bind('scroll',function(e){
+      var scrolled = window.pageYOffset > 32
+      if (scrolled != lastScrolled) {
+          $('body').toggleClass("scrolled", scrolled)
+          lastScrolled = scrolled
+      }
+
+      var hash = undefined
+      $($("#doc h1").get().reverse()).each(function(){
+          if ($(this).offset().top < window.pageYOffset + 200) {
+            hash = $(this).attr('id');
+            return false;
+          }
+          return true;
+      });
+
+      if (lastState != hash) {
+        lastState = hash
+        var state = hash ? "#" + hash : window.location.pathname
+        history.replaceState(null, document.title, state)
+        $("#doc-nav a").removeClass("selected")
+        $("#doc-nav-" + hash).addClass("selected")
+      }
+    });
+</script>
+<script>
+  // Include the feedback button on all docs
+  // If we want to make this optional, enclose this script area with
+  // 
+  // 
+  $(function() {
+    $("#doc").append(
+      $("<a>")
+        .addClass("feedback-button")
+        .html("Was this page helpful?")
+        .attr("target", "_blank")
+        .attr(
+          "href",
+          "https://docs.google.com/forms/d/e/1FAIpQLScabf7VSA_VH3BAR7j1A-d5ovrb0BeQd5qFXk0VdW6_FkvqfA/viewform?entry.940040172=" +
+            encodeURIComponent(location.href)
+        )
+    );
+  });
+</script>
+
