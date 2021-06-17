@@ -85,6 +85,9 @@ def clean(dir_entry, args, allow_list):
             if len(el.contents) == 0:
                 el.parent.extract()
 
+        for el in soup.find_all('div', 'ace-line hidden'):
+            el.extract()
+
         # remove original-href and data-doc-id attributes from anchors
         for el in soup.find_all('a'):
             del el['data-doc-id']
@@ -102,7 +105,6 @@ def clean(dir_entry, args, allow_list):
 def main():
     args = parse_args()
     allow_list = read_allow_list(args)
-    print(allow_list)
 
     for file in os.scandir(args.in_dir):
         if len(allow_list) == 0 or file.name in allow_list:
