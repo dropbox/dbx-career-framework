@@ -97,6 +97,15 @@ def clean(dir_entry, args, allow_list):
             del el['next-name']
             del el['next-href']
 
+        # Rewrite static link/script urls
+        for el in soup.find_all('link'):
+            if 'dropbox-appbox-static' in el['href']:
+                el['href'] = 'static/' + el['href'].split('/')[-1]
+
+        for el in soup.find_all('script'):
+            if 'src' in el.attrs and 'dropbox-appbox-static' in el['src']:
+                el['src'] = 'static/' + el['src'].split('/')[-1]
+
         # Output
         with open(os.path.join(args.out_dir, dir_entry.name), mode='w') as wp:
             print(str(soup), file=wp)
