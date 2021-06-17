@@ -106,6 +106,12 @@ def clean(dir_entry, args, allow_list):
             if 'src' in el.attrs and 'dropbox-appbox-static' in el['src']:
                 el['src'] = 'static/' + el['src'].split('/')[-1]
 
+        # Insert needed JS
+        s = soup.new_tag('script')
+        s.string = 'function toggleLeftnav() { document.body.classList.toggle("nav-visible") }'
+        s['type'] = 'text/javascript'
+        soup.append(s)
+
         # Output
         with open(os.path.join(args.out_dir, dir_entry.name), mode='w') as wp:
             print(str(soup), file=wp)
