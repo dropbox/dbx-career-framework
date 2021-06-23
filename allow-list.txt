@@ -29,3 +29,9 @@ l3_security_engineer.html
 l4_security_engineer.html
 l5_staff_security_engineer.html
 l6_principal_security_engineer.html
+l1_technical_program_manager.html
+l2_technical_program_manager.html
+l3_technical_program_manager.html
+l4_technical_program_manager.html
+l5_staff_technical_program_manager.html
+l6_principal_technical_program_manager.html
