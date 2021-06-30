@@ -5,3 +5,5 @@ _site
 vendor
 .DS_Store
 
+/env/
+/raw/

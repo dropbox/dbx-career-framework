@@ -1,26 +1,21 @@
-## Prerequisites
-* Git 
-* Ruby version 2.4.0 or higher (on Mac, `ruby --version` to check)
-* RubyGems
-* GCC and Make
-* Jekyll (https://jekyllrb.com/docs/)
-* [Access to Dropbox Github Repo] (https://paper.dropbox.com/doc/GitHub--BMWOq92bnKbETW~CWqqNqNUUAg-peghfrxGGazfpTVp7o15n)
-## Setup
-* Install bundler and jekyll
-  `gem install --user-install  jekyll bundler`
-* Check out Dropbox/dbx-career-framework
-* Build the site
-`cd <your-project-directory>` 
-`bundle install`
-* Run locally to make it available on a local server
-`bundle exec jekyll serve`
-* Browse to http://localhost:4000
+# Dropbox Engineering Career Framework
 
-## Content Management
-* This repo uses ["Just the Docs"](https://pmarsceill.github.io/just-the-docs/). View the quick [start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special plugins and can run on GitHub Pages’ standard Jekyll compiler.
-* Steps to add content to this repo
-** export paper docs as Markdown
-** add the document to specific directory under `docs` 
-** Run `bundle exec jekyll serve` locally to verify the changes
-** push changes to the repo
-* To customize content or navigation, see the [docs here](https://pmarsceill.github.io/just-the-docs/docs/configuration/#document-collections)
+This repo has two parts:
+
+1. A public version of drl/eng-career, located in the `docs` directory
+2. A `cleaner.py` script that converts drl/eng-career into the public version
+
+# Setup
+
+To run `cleaner.py`:
+
+1. (One time) Create a virtual env. for the project: `python3 -m venv env`
+2. Active the virtual env: `source env/bin/activate`
+3. (One time) `python3 -m pip install beautifulsoup4`
+3. Go to drl/eng-career and get your session cookie (using the browser's developer tools)
+4. Download the binder: `wget --header "Cookie: sessionid=SESSION_ID" --mirror --convert-links
+   --adjust-extension --page-requisites --no-parent -P raw --cut-dirs=3
+   https://app.dropboxer.net/binder/eng-career/`
+5. Run the "cleaner": `python3 clean.py raw/app.dropboxer.net ./docs --allow_file allow-list.txt`
+
+Review any changes to the site made by the script and open a pull request.
