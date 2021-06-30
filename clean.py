@@ -71,10 +71,17 @@ def clean(dir_entry, args, allow_list):
             # remove external links
             if el['href'].startswith('http'):
                 el.unwrap()
-
-            # remove links to things not in allow-list
-            if len(allow_list) > 0 and el['href'] not in allow_list:
+            # remove footer nav links
+            elif 'id' in el.attrs and el['id'] in ['next-link', 'prev-link', 'footer-next-link']:
                 el.extract()
+            # handle binder-internal links
+            elif len(allow_list) > 0 and el['href'] not in allow_list:
+                # nav links get deleted
+                if 'original-href' in el.attrs:
+                    el.extract()
+                # links in content get converted to plain text
+                else:
+                    el.unwrap()
 
         # Remove empty TOC entries
         for el in soup.find_all('div', 'ace-line selectable'):
