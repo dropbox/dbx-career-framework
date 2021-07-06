@@ -119,6 +119,23 @@ def clean(dir_entry, args, allow_list):
         s['type'] = 'text/javascript'
         soup.append(s)
 
+        # Insert analytics
+        s = soup.new_tag('script')
+        s['type'] = 'text/javascript'
+        s['async'] = None
+        s['src'] = 'https://www.googletagmanager.com/gtag/js?id=G-H85723BFKM'
+        soup.append(s)
+
+        s = soup.new_tag('script')
+        s['type'] = 'text/javascript'
+        s.string = '''
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-H85723BFKM');
+        '''
+        soup.append(s)
+
         # Output
         with open(os.path.join(args.out_dir, dir_entry.name), mode='w') as wp:
             print(str(soup), file=wp)
