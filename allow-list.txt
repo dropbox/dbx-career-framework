@@ -2,7 +2,7 @@ index.html
 overview.html
 what_is_impact.html
 promotion_principles.html
-core_responsibilities.html
+dropbox_values.html
 glossary.html
 ic1_software_engineer.html
 ic2_software_engineer.html
