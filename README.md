@@ -1,9 +1,14 @@
 # Dropbox Engineering Career Framework
 
+Visit [our career framework site](https://dropbox.github.io/dbx-career-framework/).
+
+# Background
+
 This repo has two parts:
 
 1. A public version of drl/eng-career, located in the `docs` directory
-2. A `cleaner.py` script that converts drl/eng-career into the public version
+2. A `cleaner.py` script that converts drl/eng-career into the [public
+   version](https://dropbox.github.io/dbx-career-framework/)
 
 # Setup
 
