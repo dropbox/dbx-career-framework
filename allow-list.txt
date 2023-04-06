@@ -15,6 +15,10 @@ ic3_quality_engineer.html
 ic4_quality_engineer.html
 ic5_staff_quality_engineer.html
 qe-_appendix.html
+ic2_sdet.html
+ic3_sdet.html
+ic4_sdet.html
+ic5_staff_sdet.html
 ic1_reliability_engineer.html
 ic2_reliability_engineer.html
 ic3_reliability_engineer.html
