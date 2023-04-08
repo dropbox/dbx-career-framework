@@ -10,6 +10,9 @@ This repo has two parts:
 2. A `cleaner.py` script that converts drl/eng-career into the [public
    version](https://dropbox.github.io/dbx-career-framework/)
 
+For complete instructions on updating and publishing the framework, 
+visit the appbox repo containing the source and internally hosted version.
+
 # Setup
 
 To run `cleaner.py`:
